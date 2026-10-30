@@ -10,8 +10,11 @@ from pathlib import Path
 
 GLOBAL_MCP_CONFIG = Path("/home/psp/.gemini/config/mcp_config.json")
 IDE_MCP_CONFIG = Path("/home/psp/.gemini/antigravity-ide/mcp_config.json")
-PYTHON_EXEC = Path("/home/psp/projects/Phone-Automation-Antigravity/.venv/bin/python")
-WORKSPACE_DIR = Path("/home/psp/projects/Phone-Automation-Antigravity")
+WORKSPACE_DIR = Path(__file__).resolve().parent.parent.parent
+PYTHON_EXEC = WORKSPACE_DIR / ".venv" / "bin" / "python"
+if not PYTHON_EXEC.exists():
+    import sys
+    PYTHON_EXEC = Path(sys.executable)
 
 
 def get_daemonx_mcp_entry() -> dict:
