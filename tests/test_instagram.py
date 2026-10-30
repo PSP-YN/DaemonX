@@ -4,12 +4,12 @@ Tests for Phase 7: Instagram Saved Reel Intelligence and Verified Safeguards
 import pytest
 from pathlib import Path
 
-from nexora.core.exceptions import VerificationError
-from nexora.device.controller import DeviceController
-from nexora.device.mock_backend import MockAdbBackend
-from nexora.instagram.classifier import InstagramClassifier
-from nexora.instagram.reel_extractor import InstagramPipeline, ReelData
-from nexora.storage.database import Database
+from daemonx.core.exceptions import VerificationError
+from daemonx.device.controller import DeviceController
+from daemonx.device.mock_backend import MockAdbBackend
+from daemonx.instagram.classifier import InstagramClassifier
+from daemonx.instagram.reel_extractor import InstagramPipeline, ReelData
+from daemonx.storage.database import Database
 
 
 @pytest.fixture

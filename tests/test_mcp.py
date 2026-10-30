@@ -3,7 +3,7 @@ Tests for Phase 3: MCP Tool Server and Antigravity Agent Integration
 """
 import json
 import pytest
-from nexora.mcp.server import create_mcp_server
+from daemonx.mcp.server import create_mcp_server
 
 
 @pytest.mark.asyncio

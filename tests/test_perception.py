@@ -4,12 +4,12 @@ Tests for Phase 2: Screen Perception Engine (OCR, CV, UI Hierarchy)
 from PIL import Image, ImageDraw
 import pytest
 
-from nexora.device.controller import DeviceController
-from nexora.device.mock_backend import MockAdbBackend, SAMPLE_INSTAGRAM_XML
-from nexora.perception.ui_hierarchy import UIHierarchyParser
-from nexora.perception.ocr_engine import OCREngine
-from nexora.perception.cv_matcher import CVMatcher
-from nexora.perception.observer import ScreenObserver
+from daemonx.device.controller import DeviceController
+from daemonx.device.mock_backend import MockAdbBackend, SAMPLE_INSTAGRAM_XML
+from daemonx.perception.ui_hierarchy import UIHierarchyParser
+from daemonx.perception.ocr_engine import OCREngine
+from daemonx.perception.cv_matcher import CVMatcher
+from daemonx.perception.observer import ScreenObserver
 
 
 def test_ui_hierarchy_parsing():
@@ -31,14 +31,14 @@ def test_ocr_engine_text_extraction():
     # Create synthetic image with readable text
     img = Image.new("RGB", (400, 150), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
-    draw.text((20, 50), "NEXORA OCR TEST", fill=(0, 0, 0))
+    draw.text((20, 50), "DAEMONX OCR TEST", fill=(0, 0, 0))
 
     text = ocr.extract_text(img)
-    assert "NEXORA" in text or "OCR" in text or "TEST" in text
+    assert "DAEMONX" in text or "OCR" in text or "TEST" in text
 
     data = ocr.extract_data(img, min_confidence=20.0)
     assert len(data) > 0
-    assert any("OCR" in d["text"] or "TEST" in d["text"] or "NEXORA" in d["text"] for d in data)
+    assert any("OCR" in d["text"] or "TEST" in d["text"] or "DAEMONX" in d["text"] for d in data)
 
 
 def test_cv_matcher_and_screen_diff():

@@ -2,10 +2,10 @@
 Tests for Phase 1: ADB Device Connection and Control
 """
 import pytest
-from nexora.core.exceptions import DeviceConnectionError, DeviceNotFoundError
-from nexora.core.types import DeviceState
-from nexora.device.controller import DeviceController
-from nexora.device.mock_backend import MockAdbBackend
+from daemonx.core.exceptions import DeviceConnectionError, DeviceNotFoundError
+from daemonx.core.types import DeviceState
+from daemonx.device.controller import DeviceController
+from daemonx.device.mock_backend import MockAdbBackend
 
 
 def test_device_discovery_mock():
@@ -73,7 +73,7 @@ def test_device_touch_and_input():
     assert controller.scroll("up") is True
 
     # Test input text
-    assert controller.input_text("Hello Nexora") is True
+    assert controller.input_text("Hello DaemonX") is True
     assert len(mock.inputs) > 0
 
     # Test navigation keys

@@ -4,9 +4,9 @@ Tests for Phase 9: Safe Cleanup, Quarantine Vault, and Restoration Workflow
 import pytest
 from pathlib import Path
 
-from nexora.cleanup.vault import QuarantineVault
-from nexora.core.exceptions import QuarantineError
-from nexora.storage.database import Database
+from daemonx.cleanup.vault import QuarantineVault
+from daemonx.core.exceptions import QuarantineError
+from daemonx.storage.database import Database
 
 
 @pytest.fixture

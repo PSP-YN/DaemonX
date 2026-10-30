@@ -9,5 +9,5 @@ else
     PYTHON_BIN="python3"
 fi
 
-echo "Running Nexora Test Suite..."
+echo "Running DaemonX Test Suite..."
 exec "$PYTHON_BIN" -m pytest tests/ -v "$@"

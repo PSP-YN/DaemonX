@@ -3,13 +3,13 @@ Tests for Phase 5: SQLite Knowledge Database, FTS5 Search, and Exports
 """
 import pytest
 from pathlib import Path
-from nexora.storage.database import Database
-from nexora.storage.schema import TAXONOMY_CATEGORIES
+from daemonx.storage.database import Database
+from daemonx.storage.schema import TAXONOMY_CATEGORIES
 
 
 @pytest.fixture
 def temp_db(tmp_path: Path):
-    db_file = tmp_path / "test_nexora.db"
+    db_file = tmp_path / "test_daemonx.db"
     return Database(db_path=db_file)
 
 
@@ -119,5 +119,5 @@ def test_exports(temp_db: Database):
     assert "Test content export" in csv_exp
 
     md_exp = temp_db.export_knowledge("markdown")
-    assert "# NEXORA Knowledge Export" in md_exp
+    assert "# DAEMONX Knowledge Export" in md_exp
     assert "Test content export" in md_exp

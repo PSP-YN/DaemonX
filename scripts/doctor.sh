@@ -9,4 +9,4 @@ else
     PYTHON_BIN="python3"
 fi
 
-"$PYTHON_BIN" -m nexora.cli doctor
+"$PYTHON_BIN" -m daemonx.cli doctor

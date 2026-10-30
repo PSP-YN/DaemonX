@@ -1,8 +1,8 @@
-# NEXORA — AI-Powered Android Automation & Personal Knowledge Platform
+# DAEMONX — AI-Powered Android Automation & Personal Knowledge Platform
 
-Nexora is a production-grade, modular Android automation and personal knowledge intelligence platform controlled from Fedora Linux through Antigravity Agent.
+DaemonX is a production-grade, modular Android automation and personal knowledge intelligence platform controlled from Fedora Linux through Antigravity Agent.
 
-Nexora combines **local deterministic execution** (ADB, Tesseract 5.5, OpenCV, SQLite FTS5) with **semantic AI reasoning** via Antigravity Agent using your existing Gemini subscription over the Model Context Protocol (MCP).
+DaemonX combines **local deterministic execution** (ADB, Tesseract 5.5, OpenCV, SQLite FTS5) with **semantic AI reasoning** via Antigravity Agent using your existing Gemini subscription over the Model Context Protocol (MCP).
 
 ---
 
@@ -60,7 +60,7 @@ Execute the full automated test suite (27 comprehensive unit and integration tes
 
 ## 🤖 Antigravity Agent & IDE Integration
 
-Nexora automatically registers itself into Antigravity MCP configuration files:
+DaemonX automatically registers itself into Antigravity MCP configuration files:
 - Global / Agent config: `/home/psp/.gemini/config/mcp_config.json`
 - IDE config: `/home/psp/.gemini/antigravity-ide/mcp_config.json`
 

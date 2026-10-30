@@ -4,8 +4,8 @@ Tests for Phase 6: Screenshot Inventory and Analysis
 from PIL import Image, ImageDraw, ImageFont
 import pytest
 from pathlib import Path
-from nexora.gallery.pipeline import GalleryPipeline
-from nexora.storage.database import Database
+from daemonx.gallery.pipeline import GalleryPipeline
+from daemonx.storage.database import Database
 
 
 @pytest.fixture

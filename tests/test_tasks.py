@@ -3,9 +3,9 @@ Tests for Phase 4: Task Engine, Checkpoints, and Recovery
 """
 import pytest
 from pathlib import Path
-from nexora.storage.database import Database
-from nexora.tasks.engine import TaskEngine
-from nexora.tasks.model import TaskStatus
+from daemonx.storage.database import Database
+from daemonx.tasks.engine import TaskEngine
+from daemonx.tasks.model import TaskStatus
 
 
 @pytest.fixture
