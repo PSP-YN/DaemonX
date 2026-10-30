@@ -37,18 +37,18 @@ DaemonX supports both physical Android hardware and headless emulators:
 
 | Device Category | Verified Models / Versions | Connection Type | Capabilities Verified |
 | :--- | :--- | :--- | :--- |
-| **Primary Target** | **Xiaomi Redmi 13 5G** (`2406ERN9CI`) | USB & Wireless ADB | Screen capture (`1080x2460 @ 440dpi`), touch injection, XML dumps, OCR, app launching |
+| **Physical Hardware** | **Android 10 - 16 Devices** (Google Pixel, Samsung Galaxy, Xiaomi, OnePlus, Motorola) | USB & Wireless ADB | High-res screen capture, touch injection, XML accessibility dumps, OCR, app lifecycle |
 | **Android Versions** | **Android 16, 15, 14, 13, 12, 11, 10** | USB & Wireless ADB | Full OS compatibility, dumpsys window detection, input text, keyevents |
-| **OEM Skins** | **Xiaomi HyperOS / MIUI**, Stock Android (Pixel), One UI, OxygenOS | USB & Wireless ADB | Standard Android accessibility and ADB input handling |
+| **OEM Skins** | Stock Android (Pixel/AOSP), One UI, OxygenOS, HyperOS / MIUI, ColorOS | USB & Wireless ADB | Standard Android accessibility and ADB input handling |
 | **Emulators** | Android Virtual Devices (AVD), Android Studio, Genymotion | Local Loopback (`emulator-5554`) | Automated test execution and headless CI |
 | **Mock Simulator** | Built-in `MockAdbBackend` | In-Memory | 100% deterministic testing without physical hardware attached |
 
-### Xiaomi HyperOS / Redmi Setup Note
-On Xiaomi devices running HyperOS or MIUI:
-1. Enable Developer Options: **Settings -> About Phone -> Tap OS Version 7 times**.
-2. In **Additional Settings -> Developer Options**:
+### Android Device Setup Note (Developer Options & ADB)
+On any physical Android device:
+1. Enable Developer Options: **Settings -> About Phone -> Tap Build Number (or OS Version) 7 times**.
+2. In **Developer Options**:
    - Toggle **USB Debugging** to ON.
-   - Toggle **USB Debugging (Security settings)** to ON *(requires a SIM card or Mi Account to authorize touch simulation)*.
+   - For OEM skins with enhanced security permissions (e.g. Xiaomi HyperOS/MIUI, ColorOS): toggle **USB Debugging (Security settings)** to ON to allow touch simulation.
 3. Accept the computer's RSA fingerprint dialog ("Always allow from this computer").
 
 ---

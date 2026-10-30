@@ -67,7 +67,7 @@ async def test_mcp_tool_execution():
     text_content = res_list.content[0].text
     devices = json.loads(text_content)
     assert len(devices) >= 1
-    assert devices[0]["model"] == "Redmi 13 5G"
+    assert devices[0]["model"] == "Android Device"
 
     # 2. Test device_inspect_screen
     res_inspect = await server.call_tool("device_inspect_screen", {"run_ocr": False})

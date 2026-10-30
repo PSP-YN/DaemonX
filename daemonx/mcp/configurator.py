@@ -8,8 +8,8 @@ import time
 from pathlib import Path
 
 
-GLOBAL_MCP_CONFIG = Path("/home/psp/.gemini/config/mcp_config.json")
-IDE_MCP_CONFIG = Path("/home/psp/.gemini/antigravity-ide/mcp_config.json")
+GLOBAL_MCP_CONFIG = Path.home() / ".gemini" / "config" / "mcp_config.json"
+IDE_MCP_CONFIG = Path.home() / ".gemini" / "antigravity-ide" / "mcp_config.json"
 WORKSPACE_DIR = Path(__file__).resolve().parent.parent.parent
 PYTHON_EXEC = WORKSPACE_DIR / ".venv" / "bin" / "python"
 if not PYTHON_EXEC.exists():

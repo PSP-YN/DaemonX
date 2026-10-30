@@ -9,19 +9,19 @@ from daemonx.device.mock_backend import MockAdbBackend
 
 
 def test_device_discovery_mock():
-    """TEST 1: Detect Redmi 13 5G over USB / Mock."""
-    mock = MockAdbBackend(serial="mock-redmi-13-5g")
+    """TEST 1: Detect Android Device over USB / Mock."""
+    mock = MockAdbBackend(serial="mock-android-device")
     controller = DeviceController(mock_backend=mock)
 
     devices = controller.get_devices()
     assert len(devices) == 1
     dev = devices[0]
-    assert dev.model == "Redmi 13 5G"
+    assert dev.model == "Android Device"
     assert dev.android_version == "16"
     assert dev.sdk_version == 36
     assert dev.width == 1080
-    assert dev.height == 2460
-    assert dev.density == 440
+    assert dev.height == 2400
+    assert dev.density == 420
     assert dev.state == DeviceState.ONLINE
 
 
@@ -30,11 +30,11 @@ def test_device_selection_and_status():
     controller = DeviceController(mock_backend=mock)
 
     dev_info = controller.select_device()
-    assert dev_info.serial == "mock-redmi-13-5g"
+    assert dev_info.serial == "mock-android-device"
 
     status = controller.get_device_status()
-    assert status.serial == "mock-redmi-13-5g"
-    assert status.model == "Redmi 13 5G"
+    assert status.serial == "mock-android-device"
+    assert status.model == "Android Device"
 
 
 def test_connection_recovery():

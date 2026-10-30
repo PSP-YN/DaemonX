@@ -14,7 +14,7 @@
   - Authored `ENVIRONMENT_AUDIT.md`, `ARCHITECTURE.md`, `IMPLEMENTATION_PLAN.md`, `TEST_PLAN.md`.
 - [x] **Phase 1: ADB Device Connection & Control**
   - Implemented `daemonx.device` (`AdbClient`, `DeviceController`, `MockAdbBackend`).
-  - Verified on physical hardware (Xiaomi Redmi 13 5G, model `2406ERN9CI`, Android 16).
+  - Verified on physical Android hardware (Android 16) and mock simulator.
   - 6 unit/integration tests passing.
 - [x] **Phase 2: Screenshot Capture, OCR & UI Perception**
   - Implemented `daemonx.perception` (`OCREngine`, `UIHierarchyParser`, `CVMatcher`, `ScreenObserver`).
@@ -49,5 +49,13 @@
 
 ## Verification Summary
 - Total Automated Tests: **27 passed, 0 failed** across all test suites.
-- Physical Hardware Verification: Verified on Xiaomi Redmi 13 5G (`2406ERN9CI`, serial `dc88b30d`, Android 16).
+- Hardware Verification: Verified on Android hardware (Android 16, USB & Wireless ADB) and MockAdbBackend.
 - Acceptance Criteria: All 15 acceptance tests verified with concrete evidence.
+
+## Bug Fixes
+- [x] **CI Cross-Platform Font Fallback for Screenshot OCR Test**:
+  - Goal: Fix `test_screenshot_processing_pipeline` failing in CI when Fedora-specific font `/usr/share/fonts/liberation-sans-fonts/` is missing.
+  - Files: `tests/test_gallery.py`
+  - Checks: Ran `uv run pytest tests/ -v`, all 27 tests passed.
+  - Blockers: None.
+

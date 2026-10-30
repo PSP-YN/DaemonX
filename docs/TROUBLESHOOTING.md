@@ -3,9 +3,9 @@
 ## 1. Device Connection & ADB Issues
 
 ### Symptom: `adb devices` shows `unauthorized`
-- **Cause**: The phone has not accepted the Fedora host's RSA debugging key.
+- **Cause**: The phone has not accepted the computer's RSA debugging key.
 - **Fix**:
-  1. Unlock the Xiaomi Redmi 13 5G screen.
+  1. Unlock the Android phone screen.
   2. A system prompt will appear: "Allow USB debugging?".
   3. Check "Always allow from this computer" and tap **OK**.
   4. Run `adb devices` to confirm state changes to `device`.
@@ -14,14 +14,14 @@
 - **Cause**: Loose USB cable, port sleep, or debugging disabled.
 - **Fix**:
   1. Unplug and reconnect USB cable.
-  2. Verify in Settings -> Additional Settings -> Developer Options that **USB Debugging** is toggled ON.
+  2. Verify in **Settings -> Developer Options** that **USB Debugging** is toggled ON.
   3. Run `./scripts/doctor.sh` to diagnose host ADB bridge.
 
 ### Symptom: Tap or Swipe has no effect on phone
-- **Cause**: Xiaomi HyperOS / MIUI requires a separate toggle for simulated touch input.
+- **Cause**: Some OEM skins (Xiaomi HyperOS / MIUI, ColorOS) require a separate security toggle for simulated touch input.
 - **Fix**:
-  1. Open **Settings -> Additional Settings -> Developer Options**.
-  2. Enable **USB Debugging (Security settings)**. (Xiaomi requires a SIM card / Mi Account to toggle this security permission once).
+  1. Open **Settings -> Developer Options**.
+  2. Enable **USB Debugging (Security settings)** or equivalent simulated touch permission.
 
 ---
 

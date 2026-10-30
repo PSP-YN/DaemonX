@@ -37,7 +37,7 @@ This implementation plan defines the phased rollout of DaemonX across 10 sequent
   - `daemonx/mcp/tools_knowledge.py`: `knowledge_search`, `knowledge_create_record`, etc.
   - `daemonx/mcp/tools_task.py`: `task_create`, `task_status`, etc.
   - `daemonx/mcp/tools_cleanup.py`: `cleanup_preview`, `cleanup_quarantine`, etc.
-  - Automatic registration in `/home/psp/.gemini/config/mcp_config.json` and IDE config.
+  - Automatic registration in user's Antigravity config (`~/.gemini/config/mcp_config.json`) and IDE config.
 - **Verification**: MCP protocol test suite (tool listing, schema validation, simulated tool calls).
 
 ### Phase 4: Task Engine, Checkpoints & Recovery

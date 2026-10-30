@@ -23,7 +23,7 @@ SAMPLE_INSTAGRAM_XML = """<?xml version='1.0' encoding='UTF-8' standalone='yes' 
 
 
 class MockAdbBackend:
-    def __init__(self, serial: str = "mock-redmi-13-5g"):
+    def __init__(self, serial: str = "mock-android-device"):
         self.serial = serial
         self.is_connected = True
         self.authorized = True
@@ -48,13 +48,13 @@ class MockAdbBackend:
             DeviceInfo(
                 serial=self.serial,
                 state=state,
-                model="Redmi 13 5G",
-                product="breeze",
+                model="Android Device",
+                product="generic",
                 android_version="16",
                 sdk_version=36,
                 width=1080,
-                height=2460,
-                density=440,
+                height=2400,
+                density=420,
                 connection_type=ConnectionType.MOCK
             )
         ]
@@ -70,7 +70,7 @@ class MockAdbBackend:
         cmd = cmd.strip()
 
         if "getprop ro.product.model" in cmd:
-            return "Redmi 13 5G"
+            return "Android Device"
         elif "getprop ro.build.version.release" in cmd:
             return "16"
         elif "getprop ro.build.version.sdk" in cmd:

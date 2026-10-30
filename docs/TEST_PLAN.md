@@ -12,7 +12,7 @@ This test plan provides comprehensive verification for all DaemonX modules to en
    - Mock ADB backend (`MockAdbBackend`) enabling fast, deterministic CI execution without requiring a physical device.
    - Dual-mode test runner:
      - Default mode: Runs all unit, model, storage, perception, and mock device tests.
-     - `--hardware` mode: Targets physical hardware (Xiaomi Redmi 13 5G) when connected via USB or wireless ADB.
+      - `--hardware` mode: Targets physical hardware or emulators when connected via USB or wireless ADB.
 
 2. **Test Categories**:
    - **`tests/test_device.py`**: ADB command generation, device discovery, connection state, error handling, coordinates mapping, touch/swipe/input execution.
@@ -30,7 +30,7 @@ This test plan provides comprehensive verification for all DaemonX modules to en
 
 | Test ID | Name | Test Function / Target | Validation Criteria |
 | :--- | :--- | :--- | :--- |
-| **TEST 1** | Detect Redmi 13 5G over USB | `test_device_discovery` | Correctly parses `adb devices -l` and extracts device model & serial. |
+| **TEST 1** | Detect Android Device over USB / Mock | `test_device_discovery` | Correctly parses `adb devices -l` and extracts device model & serial. |
 | **TEST 2** | Disconnection & Reconnection | `test_connection_recovery` | Graceful failure handling on connection drop; auto-reconnects when available. |
 | **TEST 3** | Screen Capture | `test_screen_capture` | Successfully captures screen bytes and decodes into valid RGB image. |
 | **TEST 4** | Text & Element Extraction | `test_perception_extraction` | Extracts visible text strings, bounds, and interactive elements from UI dump. |

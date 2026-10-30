@@ -1,7 +1,7 @@
 # DAEMONX — User Manual & Operations Guide
 
 ## 1. Overview
-DaemonX enables you to control your Android smartphone from Fedora Linux using natural language through Antigravity Agent, execute automated workflows, extract structured knowledge from screenshots and Instagram Saved Reels, and manage cleanups safely.
+DaemonX enables you to control your Android smartphone from Linux (tested on Fedora and Ubuntu) using natural language through Antigravity Agent, execute automated workflows, extract structured knowledge from screenshots and Instagram Saved Reels, and manage cleanups safely.
 
 ---
 
@@ -21,7 +21,7 @@ DaemonX enables you to control your Android smartphone from Fedora Linux using n
 
 ### Workflow B: Instagram Saved Reel Intelligence
 1. **Open Collection**:
-   > "Open my Instagram Saved collection on the Redmi 13 5G."
+   > "Open my Instagram Saved collection on the connected device."
    Antigravity invokes `instagram_open_saved`.
 2. **Extract Current Reel**:
    > "Inspect the reel currently displayed on screen."

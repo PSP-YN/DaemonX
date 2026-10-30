@@ -75,7 +75,7 @@ def doctor():
         table.add_row("Android Hardware", str(e), "[yellow]WARNING[/yellow]")
 
     # 7. Antigravity MCP Config
-    mcp_cfg = Path("/home/psp/.gemini/config/mcp_config.json")
+    mcp_cfg = Path.home() / ".gemini" / "config" / "mcp_config.json"
     if mcp_cfg.exists():
         table.add_row("Antigravity MCP Config", str(mcp_cfg), "[green]REGISTERED[/green]")
     else:

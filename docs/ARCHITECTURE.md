@@ -16,7 +16,7 @@ DaemonX is a modular, general-purpose AI-powered Android automation and personal
                                |
 +------------------------------v------------------------------+
 |                     DAEMONX MCP SERVER                       |
-|           (/home/psp/projects/Phone-Automation-Antigravity) |
+|                 (DaemonX Repository Root)                    |
 +------------------------------+------------------------------+
                                |
        +-----------------------+-----------------------+

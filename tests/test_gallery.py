@@ -18,8 +18,25 @@ def gallery_setup(tmp_path: Path):
     screen_dir = tmp_path / "screenshots"
     screen_dir.mkdir()
 
-    font_path = Path("/usr/share/fonts/liberation-sans-fonts/LiberationSans-Regular.ttf")
-    font = ImageFont.truetype(str(font_path), 22) if font_path.exists() else None
+    font = None
+    try:
+        font = ImageFont.load_default(size=22)
+    except Exception:
+        candidate_fonts = [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+            "/usr/share/fonts/liberation-sans-fonts/LiberationSans-Regular.ttf",
+            "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
+        ]
+        for fp in candidate_fonts:
+            if Path(fp).exists():
+                try:
+                    font = ImageFont.truetype(fp, 22)
+                    break
+                except Exception:
+                    continue
+        if font is None:
+            font = ImageFont.load_default()
 
     img1_path = screen_dir / "screen_01.png"
     img1 = Image.new("RGB", (800, 300), color=(255, 255, 255))
