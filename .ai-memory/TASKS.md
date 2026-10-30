@@ -1,6 +1,13 @@
 # DAEMONX — Task Ledger
 
 ## Completed Tasks
+- [x] **Repository Release & Community Files**:
+  - Added public domain `UNLICENSE`.
+  - Added `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, root `SECURITY.md`.
+  - Added `.github/workflows/ci.yml`, bug report, feature request, and PR templates.
+  - Enhanced `README.md` with full device support matrix (Redmi 13 5G, Android 10-16, Emulators).
+  - Pushed all commits to `https://github.com/PSP-YN/DaemonX.git`.
+
 - [x] **Phase 0: Environment Audit & System Blueprint**
   - Audited Fedora 44, Python 3.12, ADB, Tesseract 5.5, SQLite FTS5, Antigravity MCP paths.
   - Initialized Python 3.12 virtualenv via `uv` with all core dependencies.
