@@ -182,3 +182,12 @@ Contributions are welcome! Please read:
 ## 📄 License
 
 This software is released into the public domain under the [Unlicense](UNLICENSE). You are free to copy, modify, publish, use, compile, sell, or distribute this software for any purpose.
+
+
+## Project documentation
+
+- [Contributing](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security policy](SECURITY.md)
+- [Changelog](CHANGELOG.md)
+- [Project documentation](docs/)
